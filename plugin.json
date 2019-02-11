@@ -1,0 +1,48 @@
+  {
+  "version": "1.0",
+  "activation": "SnapshotEntry",
+  "name": "custom.python.msmq",
+  "type": "python",
+  "entity": "PROCESS_GROUP_INSTANCE",
+  "source": {
+    "package": "msmq",
+    "className": "MsmqPlugin"
+  },
+  "processTypeNames": ["WINDOWS_SYSTEM"],
+  "ui":{
+	"keycharts": [
+	{
+		"group": "MSMQ",
+		"title": "Queue size",
+		"series": [      
+			{
+        "key": "<queuename>",
+        "unit": "Count",
+        "displayname": "<queuename>"			
+      },
+      {
+        "key": "<queuename>",
+        "unit": "Count",
+        "displayname": "<queuename>"			
+      }
+		]
+	}
+	]
+  },
+  "metrics": [
+  { 
+      "timeseries":{ 
+		  "key": "<queuename>",
+      "unit": "Count",
+      "displayname": "<queuename>"	
+    }
+  },
+  { 
+      "timeseries":{ 
+      "key": "<queuename>",
+      "unit": "Count",
+      "displayname": "<queuename>"	
+    }
+  } 
+  ]
+}
